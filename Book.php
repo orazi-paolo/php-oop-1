@@ -8,6 +8,7 @@
     // creando un file dedicato ai dati (tipo gli array di oggetti) che potremmo chiamare db.php
     // mettendo ciascuna classe nel proprio file e magari raggruppare tutte le classi in una cartella dedicata che possiamo chiamare classes/
     // organizzando il layout dividendo la struttura ed i contenuti in file e parziali dedicati.
+
     // ! definisco la classe book
     class Book
     {
@@ -15,18 +16,31 @@
         public $title;
         public $author;
         public $yearOfPublication;
+        public $genres = [];
 
         // definisco un costruttore
-        public function __construct($_title, $_author, $_yearOfPublication)
+        public function __construct($_title, $_author, $_yearOfPublication, array $_genre)
         {
             $this->title = $_title;
             $this->author = $_author;
             $this->yearOfPublication = $_yearOfPublication;
+            $this->genres = $_genre;
         }
         // definisco un metodo
         public function getDescription()
         {
-            return 'Il libro ' . $this->title . ' è stato scritto da ' . $this->author . ' nel ' . $this->yearOfPublication;
+            // inizializzo unfa stringa per i nomi dei generi
+            $genresList = '';
+
+            // ciclo per ogni genere nella lista dei generi
+            foreach ($this->genres as $genre) {
+                $genresList .= $genre->name . ', ';
+            }
+
+            // tolgo l ultima virgola e lo spazio con la funzione rtrim
+            $genresList = rtrim($genresList, ', ');
+
+            return 'Il libro ' . $this->title . ' è stato scritto da ' . $this->author . ' nel ' . $this->yearOfPublication . ' ed è di genere: ' . $genresList;
         }
     }
     ?>

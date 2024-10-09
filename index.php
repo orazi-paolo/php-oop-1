@@ -1,10 +1,15 @@
 <?php
-// includo la classe
+// includo le classi
 require_once 'Book.php';
+require_once 'Genre.php';
 
-// istanzio due oggetti
-$firstBook = new Book('Atomic habits', 'James Clear', 2019);
-$secondBook = new Book('Il potere delle abitudini', 'Charles Duhigg', 2014);
+// istanzio due oggetti per la classe genre
+$firstGenre = new Genre('Self-help');
+$secondGenre = new Genre('Personal growth');
+
+// istanzio due oggetti per la classe book
+$firstBook = new Book('Atomic habits', 'James Clear', 2019, [$firstGenre]);
+$secondBook = new Book('Il potere delle abitudini', 'Charles Duhigg', 2014, [$firstGenre, $secondGenre]);
 ?>
 
 <!DOCTYPE html>

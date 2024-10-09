@@ -1,3 +1,8 @@
+<?php
+// includo la classe
+require_once '/Book.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,5 +1,4 @@
  <?php
-    // => all'interno della classe è definito un costruttore
     // => all'interno della classe è definito almeno un metodo
     // vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà
     // Bonus 1:
@@ -25,6 +24,11 @@
             $this->title = $_title;
             $this->author = $_author;
             $this->yearOfPublication = $_yearOfPublication;
+        }
+        // definisco un metodo
+        public function getDescription()
+        {
+            return 'Il libro ' . $this->title . ' è stato scritto da ' . $this->author . ' nel ' . $this->yearOfPublication;
         }
     }
     ?>

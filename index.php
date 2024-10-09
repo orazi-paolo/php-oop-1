@@ -1,6 +1,6 @@
 <?php
 // includo la classe
-require_once '/Book.php';
+require_once 'Book.php';
 
 // istanzio due oggetti
 $firstBook = new Book('Atomic habits', 'James Clear', 2019);
@@ -17,7 +17,15 @@ $secondBook = new Book('Il potere delle abitudini', 'Charles Duhigg', 2014);
 </head>
 
 <body>
+    <h1>
+        Libri che non parlano delle abitudini
+    </h1>
 
+    <ul>
+        <!-- stampo in pagina -->
+        <li><?php echo $firstBook->getDescription(); ?></li>
+        <li><?php echo $secondBook->getDescription(); ?></li>
+    </ul>
 </body>
 
 </html>
